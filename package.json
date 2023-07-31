@@ -6,17 +6,42 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{html,css,scss}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
+    "@tabler/icons-react": "^2.30.0",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
     "@types/react-dom": "18.2.7",
+    "clsx": "^2.0.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.64.1",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
   }
 }
