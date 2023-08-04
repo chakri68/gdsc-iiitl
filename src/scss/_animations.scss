@@ -1,0 +1,19 @@
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    display: none;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,30 @@
+@mixin border-hover-animation(
+  $color: #4e4e4e,
+  $height: 0.125rem,
+  $duration: 0.5s,
+  $timing-function: ease-out,
+  $initial-width: 0,
+  $final-width: 100%
+) {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    height: $height;
+    background-color: $color;
+
+    top: 100%;
+    left: 0;
+    position: absolute;
+
+    width: $initial-width;
+    transition: width $duration $timing-function;
+  }
+
+  &:hover {
+    &::after {
+      width: $final-width;
+    }
+  }
+}
