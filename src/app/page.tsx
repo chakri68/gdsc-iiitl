@@ -1,95 +1,57 @@
+"use client";
+
+import Layout from "@/components/Layout/Layout";
+import Page from "@/components/Page/Page";
 import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <>
+      <Page.Hero
+        gap="2.5rem"
+        size="full"
+        title={
+          <Layout.Flex align="flex-start" direction="row" gap="2rem">
+            <Image alt="gdsc logo" src={"/logo.png"} width={100} height={100} />
+            <Layout.Flex direction="column">
+              <span style={{ fontWeight: "700" }}>Developer Student Club</span>
+              <span style={{ fontWeight: "600" }}>IIIT Lucknow</span>
+            </Layout.Flex>
+          </Layout.Flex>
+        }
+        subtitle={
+          <Layout.Flex align="center" direction="column" gap="0.5rem">
+            <span style={{ fontWeight: "500" }}>
+              Powered By Google Developers
+            </span>
+            <span style={{ fontWeight: "500", color: "#ff69b4" }}>
+              #developerstudentclubs #googlestudents #growwithgoogle{" "}
+            </span>
+          </Layout.Flex>
+        }
+      />
+      <Page.Section
+        size="full"
+        type="media"
+        mediaItems={[
+          {
+            type: "node",
+            node: (
+              <Layout.Flex align="center" direction="column" gap="0.5rem">
+                <span style={{ fontWeight: "500" }}>
+                  Developer Student Club
+                </span>
+                <span style={{ fontWeight: "500" }}>IIIT Lucknow</span>
+              </Layout.Flex>
+            ),
+          },
+          {
+            type: "image",
+            src: "/logo.png",
+            alt: "gdsc logo",
+          },
+        ]}
+      />
+    </>
   );
 }
