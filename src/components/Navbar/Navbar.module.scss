@@ -1,0 +1,102 @@
+@import "@/scss/_variables.scss";
+@import "@/scss/_mixins.scss";
+
+.NavbarWrapper {
+  width: 100%;
+  height: max-content;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15.9px);
+  -webkit-backdrop-filter: blur(15.9px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+  display: grid;
+  place-items: center;
+
+  position: fixed;
+  top: 0;
+}
+
+.Navbar {
+  max-width: 1280px;
+  width: 70%;
+  padding: 0.15rem 1rem;
+
+  display: grid;
+  align-items: center;
+  grid-template-areas: "leftarea . rightarea";
+  grid-template-columns: max-content 1fr max-content;
+
+  & > .LeftContainer {
+    grid-area: leftarea;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  & > .RightContainer {
+    grid-area: rightarea;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.BrandLogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+
+  & > .Brand {
+    color: $text-light;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
+
+.NavLink {
+  &.FillAnimation {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 0.5rem;
+
+    display: grid;
+    place-items: center;
+
+    transition:
+      background-color 0.25s ease-out,
+      color 0.25s ease-out;
+
+    &:hover {
+      background-color: #4e4e4e;
+      color: white;
+    }
+  }
+}
+
+.LinkButton {
+  text-decoration: none;
+  font-weight: 400;
+  color: $text-lighter;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+
+  transition:
+    color 0.25s,
+    ease-in-out;
+
+  &:not(.NoAnimation) {
+    @include border-hover-animation($text-light, 0.125rem, 0.25s, ease-in-out);
+  }
+
+  &:hover {
+    color: $text-darker;
+  }
+}
