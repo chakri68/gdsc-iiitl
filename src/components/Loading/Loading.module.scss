@@ -1,0 +1,18 @@
+@import "@/scss/_animations.scss";
+
+.Loading {
+  position: absolute;
+
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: grid;
+  place-items: center;
+
+  &:not(.isLoading) {
+    animation: fadeOut 0.5s ease-in-out forwards;
+  }
+}
