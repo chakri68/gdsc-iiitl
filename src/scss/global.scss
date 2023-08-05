@@ -7,3 +7,11 @@ body {
 * {
   box-sizing: border-box;
 }
+
+/* INFO FOR REFERENCE: */
+
+/* 1. Z-INDICES */
+
+// z-index: 0 - 10; Below Normal Stacking Context
+// z-index: 10 - 30; Default Stacking Context
+// z-index: 30 - 40; Topmost Stacking Context
